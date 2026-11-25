@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cutroom: clip review for LimeCuts</title>
+<meta name="description" content="Cutroom is the desktop tool LimeCuts uses to prepare vertical gaming highlight clips, review every one by hand, and upload approved clips to the creator's own YouTube channel and TikTok drafts.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="./">CUT<span>ROOM</span></a>
+  <nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+</header>
+<main>
+  <h1>Cutroom</h1>
+  <p class="lede">Cutroom is a desktop tool for making short vertical highlight clips from gaming streams. It prepares
+  each clip, shows it in a review page for the creator to approve, and then uploads approved clips to the creator's
+  own YouTube channel as Shorts (through the YouTube Data API) and sends them to the creator's TikTok inbox as drafts.
+  Nothing is uploaded that the creator has not watched and approved.</p>
+
+  <p>Cutroom is built and used by the creator behind <b>LimeCuts</b> (@thelimecuts), a gaming highlights channel.
+  It runs on the creator's own Windows PC. It is not a hosted service and has no accounts of its own.</p>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>Find moments.</b> Cutroom takes long-form footage the creator has permission to clip (streamers who allow
+    clipping, or campaigns that provide the footage) and finds highlight moments from speech, audio and chat activity.</li>
+    <li><b>Prepare clips.</b> It cuts each moment to a vertical 9:16 video with captions and a short title line.</li>
+    <li><b>Human review.</b> Every clip appears in a review page on the creator's PC or phone. The creator watches it
+    and taps Approve or Reject, and can trim it or rewrite its text first. Rejected clips are never uploaded.</li>
+    <li><b>Upload to YouTube.</b> An approved clip is uploaded to the creator's own YouTube channel as a public Short
+    with the title and description the creator approved (YouTube Data API, <code>videos.insert</code>). Afterwards
+    Cutroom reads the view counts of those uploads (<code>videos.list</code>) so the creator can see what worked.</li>
+    <li><b>Send to TikTok drafts.</b> For TikTok, the creator taps <i>Send to TikTok drafts</i>. Cutroom
+    uploads the video to the creator's own TikTok inbox using TikTok's Content Posting API (upload to inbox). It does
+    not publish anything there.</li>
+    <li><b>The creator posts it.</b> TikTok sends a notification. The creator opens it in the TikTok app, writes or
+    pastes the caption, chooses privacy and other settings, adds any required disclosure, and taps Post.</li>
+  </ol>
+
+  <figure>
+    <img src="review.png" alt="The Cutroom review page on a phone, showing a clip waiting for approval">
+    <figcaption>The Cutroom review page: a clip waiting for the creator's approval.</figcaption>
+  </figure>
+
+  <h2>What Cutroom does with YouTube</h2>
+  <ul>
+    <li>Connects to the creator's own YouTube channel with Google sign-in (OAuth 2.0); the creator approves the
+    <code>youtube.upload</code> and <code>youtube.readonly</code> scopes on Google's own consent screen.</li>
+    <li>Uploads approved clips to that channel (<code>videos.insert</code>), optionally sets their thumbnail
+    (<code>thumbnails.set</code>), and reads the view counts of those uploads (<code>videos.list</code>,
+    <code>channels.list</code> to confirm the connected channel).</li>
+    <li>Uses YouTube API Services under the
+    <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">YouTube API Services Terms of Service</a>.
+    Nothing it reads about the channel is shared with anyone or kept longer than needed.</li>
+  </ul>
+  <p>It has one user: the creator who runs it. It does not post to other channels, does not like, subscribe or
+  comment, does not add views, and does not read any other user's data.</p>
+
+  <h2>What Cutroom does with TikTok</h2>
+  <ul>
+    <li>Connects to the creator's own TikTok account with TikTok Login Kit (the creator approves on TikTok's own screen).</li>
+    <li>Reads the account's display name and avatar to show which account drafts go to.</li>
+    <li>Uploads approved videos to that account's TikTok inbox as drafts (scope <code>video.upload</code>).</li>
+  </ul>
+  <p>It does not post automatically, does not like, follow or comment, does not add views, and does not read any
+  other user's data.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about Cutroom: message the <a href="https://www.youtube.com/@thelimecuts/about">LimeCuts channel</a>
+  (the About page lists a contact address).</p>
+</main>
+<footer>
+  <span>Cutroom · made for LimeCuts</span>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+</footer>
+</body>
+</html>

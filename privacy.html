@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cutroom Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="./">CUT<span>ROOM</span></a>
+  <nav><a href="./">Home</a><a href="terms.html">Terms of Service</a></nav>
+</header>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: November 24, 2026</p>
+
+  <p>Cutroom is a desktop tool that runs on its user's own computer. This policy explains what it stores and why.
+  The short version: everything stays on that computer, and nothing is sold or shared.</p>
+
+  <h2>Who uses Cutroom</h2>
+  <p>Cutroom is used by the creator behind the LimeCuts channel to manage their own accounts. It has no sign-up and no
+  accounts of its own, and it does not collect data about other people.</p>
+
+  <h2>YouTube API Services</h2>
+  <p>Cutroom uses <b>YouTube API Services</b> to upload the user's approved clips to the user's own YouTube channel and
+  to read the view counts of those uploads. By connecting a YouTube channel, the user also agrees to the
+  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and Google's handling of data is described in
+  the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+  <ul>
+    <li><b>Authorised data it accesses:</b> the connected channel's identity (to confirm which channel it uploads to),
+    the ability to upload videos and set their thumbnails, and the public statistics (view counts) of the videos it
+    uploaded. It does not read comments, subscribers, private videos or any other channel's data.</li>
+    <li><b>Where it is stored:</b> the OAuth token in a local file, and the video IDs and view counts of the user's
+    own uploads in a local database, both on the user's computer only. Nothing is sent to any other server.</li>
+    <li><b>How long:</b> the token until the user disconnects; view counts are kept for the user's own reporting and
+    refreshed when read again. No data is cached beyond that.</li>
+    <li><b>Revoking access:</b> the user can revoke Cutroom's access at any time on Google's security settings page,
+    <a href="https://security.google.com/settings/security/permissions">security.google.com/settings/security/permissions</a>,
+    or by deleting Cutroom's local token file. Either stops all API calls.</li>
+  </ul>
+
+  <h2>What Cutroom stores</h2>
+  <ul>
+    <li><b>Login tokens</b> that the user grants through each platform's official sign-in screen (for YouTube: a
+    Google OAuth 2.0 token; for TikTok: an access token and refresh token from TikTok Login Kit). They are stored in a
+    local file on the user's computer and are used only to call that platform's API for the user's own account.</li>
+    <li><b>Account display name and avatar</b> from TikTok (<code>user.info.basic</code>), shown in the review page so the
+    user can see which account a draft goes to.</li>
+    <li><b>Video files and clip details</b> the user creates, and <b>view counts of the user's own posts</b>, in a local
+    database on the user's computer.</li>
+  </ul>
+
+  <h2>What Cutroom does not do</h2>
+  <ul>
+    <li>It does not send this data to any server run by Cutroom (there is none).</li>
+    <li>It does not sell, rent or share data with anyone.</li>
+    <li>It does not read other YouTube or TikTok users' data, messages or followers.</li>
+    <li>It does not use the data for advertising or profiling, and does not show ads.</li>
+  </ul>
+
+  <h2>Data sent to platforms</h2>
+  <p>When the user approves a clip, Cutroom uploads that video to the user's own YouTube channel through the YouTube
+  Data API, and, when the user taps <i>Send to TikTok drafts</i>, to the user's TikTok inbox through TikTok's Content
+  Posting API. Each platform's own privacy policy covers what it does with the upload.</p>
+
+  <h2>Removing data</h2>
+  <p>The user can disconnect at any time by deleting Cutroom's local token file, by revoking access on
+  <a href="https://security.google.com/settings/security/permissions">Google's security settings page</a>, or by
+  removing Cutroom's access in the TikTok app (Settings and privacy, Security and permissions, Apps and services
+  permissions). Deleting Cutroom's data folder removes everything it stored.</p>
+
+  <h2>Changes and contact</h2>
+  <p>If this policy changes, the date above changes with it. Questions: message the
+  <a href="https://www.youtube.com/@thelimecuts/about">LimeCuts channel</a> (its About page lists a contact address).</p>
+</main>
+<footer>
+  <span>Cutroom · made for LimeCuts</span>
+  <a href="./">Home</a>
+  <a href="terms.html">Terms of Service</a>
+</footer>
+</body>
+</html>
